@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { test } from 'node:test';
 import {
+  OPTIMIZED_HEADER_TORN_URL,
   OPTIMIZED_HERO_POSTER_URL,
   OPTIMIZED_HERO_VIDEO_URL,
   OPTIMIZED_LOGO_WEBP_URL,
@@ -45,6 +46,7 @@ test('toOptimizedWebp maps local aistudio and cases raster assets and passes thr
 
 test('all explicit optimized constants exist under public/assets/optimized and meet strict byte budgets', () => {
   const imageUrls = [
+    OPTIMIZED_HEADER_TORN_URL,
     OPTIMIZED_HERO_POSTER_URL,
     OPTIMIZED_LOGO_WEBP_URL,
     OPTIMIZED_PORTRAIT_WEBP_URL,

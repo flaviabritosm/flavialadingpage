@@ -1,5 +1,6 @@
 export const OPTIMIZED_HERO_VIDEO_URL = '/assets/optimized/hero-loop.mp4';
 export const OPTIMIZED_HERO_POSTER_URL = '/assets/optimized/hero-poster.webp';
+export const OPTIMIZED_HEADER_TORN_URL = '/assets/optimized/header-torn-edge.webp';
 export const OPTIMIZED_LOGO_WEBP_URL = '/assets/optimized/logo-flavia-brito.webp';
 export const OPTIMIZED_PORTRAIT_WEBP_URL = '/assets/optimized/batom-facecard.webp';
 export const OPTIMIZED_SECTION07_VIDEO_URL = '/assets/optimized/section07-cta.mp4';
