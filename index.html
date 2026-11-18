@@ -1,0 +1,2201 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flavia Brito — Head de Conteúdo</title>
+  <meta name="description" content="Posicionamento, estratégia e gestão de conteúdo para marcas criativas e alternativas que querem ser reconhecidas pelo valor, e não apenas pelo preço." />
+  <meta property="og:title" content="Flavia Brito — Head de Conteúdo" />
+  <meta property="og:description" content="Posicionamento, estratégia e gestão de conteúdo para marcas criativas e alternativas que querem ser reconhecidas pelo valor, e não apenas pelo preço." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts strictly matching Reference-Based Typography System: Anton, Caveat, DM Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..500&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="/assets/optimized/hero-poster.webp" fetchpriority="high" />
+  <link rel="preload" as="image" href="/assets/optimized/logo-flavia-brito.webp" fetchpriority="high" />
+
+  <style>
+    /* Zero-specificity scoped resets so Tailwind utilities & class spacing rules apply cleanly */
+    :where(#stats, .stats, #loop, #processo) *,
+    :where(#stats, .stats, #loop, #processo) *::before,
+    :where(#stats, .stats, #loop, #processo) *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :where(#stats, .stats, #loop, #processo) a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    html {
+      background: var(--color-background, #FFF9F4);
+      scroll-padding-top: 96px;
+    }
+
+    #root {
+      min-height: max(100vh, 660px);
+      background: #FFF9F4;
+    }
+
+    #footer-root {
+      min-height: auto;
+      background: #FAF7EE;
+    }
+
+    html.lenis, html.lenis body { height: auto; }
+    .lenis.lenis-smooth { scroll-behavior: auto !important; }
+
+    body {
+      font-family: var(--font-body, "DM Sans", Arial, sans-serif);
+      color: var(--color-text-primary, #000000);
+      background: var(--color-background, #FFF9F4);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    #app {
+      position: relative;
+      z-index: 1;
+      background: var(--color-background, #FFF9F4);
+      overflow: clip;
+    }
+
+    /* ============================================================
+       SEÇÕES 02 & 04: PROBLEMA (#stats) & ENTREGAS (#stats-2)
+       ============================================================ */
+    .stats {
+      position: relative;
+      padding: clamp(72px, 10vh, 128px) clamp(20px, 3vw, 40px) clamp(56px, 7vh, 96px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+      background: var(--color-background, #FFF9F4);
+      color: var(--color-text-primary, #000000);
+    }
+
+    .sq-field {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .sq-grid {
+      position: absolute;
+      inset: -1px;
+      display: grid;
+      grid-template-columns: repeat(var(--cols, 12), 1fr);
+      grid-template-rows: repeat(var(--rows, 8), 1fr);
+      gap: 0;
+    }
+
+    .sq-cell {
+      border-right: 1px solid rgba(0, 0, 0, 0.055);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.055);
+      background: transparent;
+      will-change: background-color;
+      transition: background-color 1.1s ease;
+    }
+
+    .sq-cell.is-on {
+      background: rgba(242, 190, 214, 0.28);
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.06);
+    }
+
+    .sq-cell.is-soft {
+      background: rgba(165, 220, 209, 0.16);
+    }
+
+    .stats .pill {
+      position: relative;
+      z-index: 2;
+      display: inline-block;
+      font-family: var(--font-ui, "DM Sans", Arial, sans-serif);
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: var(--radius-pill, 999px);
+      background: var(--color-surface-alt, #F2BED6);
+      color: var(--color-text-primary, #000000);
+      border: 1px solid var(--color-border-strong, #000000);
+      box-shadow: var(--shadow-sticker, 4px 4px 0 rgba(0,0,0,0.85));
+    }
+
+    #stats-2 .pill {
+      background: var(--color-accent, #A5DCD1);
+    }
+
+    .stats .h2 {
+      position: relative;
+      z-index: 2;
+      margin-top: clamp(20px, 3vh, 32px);
+      text-align: center;
+      max-width: 1020px;
+      font-family: var(--font-display, "Anton", "Impact", sans-serif);
+      font-weight: 400;
+      text-transform: uppercase;
+      font-size: clamp(2.5rem, 5vw, 5.5rem);
+      line-height: 0.98;
+      letter-spacing: -0.02em;
+      color: var(--color-text-primary, #000000);
+    }
+
+    .hw-accent {
+      display: inline-block;
+      font-family: var(--font-handwritten, "Caveat", cursive);
+      font-weight: 600;
+      font-style: normal;
+      text-transform: none;
+      letter-spacing: -0.02em;
+      line-height: 0.9;
+      font-size: 1.12em;
+      color: var(--color-primary, #FB0C72);
+      transform: rotate(-2deg);
+      padding: 0 0.08em;
+    }
+
+    .stats .stats-lead {
+      position: relative;
+      z-index: 2;
+      margin-top: clamp(16px, 2.2vh, 24px);
+      text-align: center;
+      max-width: 720px;
+      font-family: var(--font-body, "DM Sans", Arial, sans-serif);
+      font-size: clamp(16px, 1.3vw, 18px);
+      line-height: 1.6;
+      font-weight: 400;
+      color: var(--color-text-secondary, rgba(0,0,0,0.70));
+    }
+
+    .cards {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      max-width: 1280px;
+      margin-top: clamp(32px, 4.5vh, 52px);
+    }
+
+    .cols {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(16px, 1.8vw, 24px);
+    }
+
+    .stats .card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+      min-height: 196px;
+      padding: 24px;
+      background: var(--color-surface, #FFFFFF);
+      color: var(--color-text-primary, #000000);
+      border: 1px solid rgba(0, 0, 0, 0.28);
+      border-radius: var(--radius-lg, 12px);
+      box-shadow: var(--shadow-editorial, 0 12px 30px rgba(0,0,0,0.10));
+      transition: transform var(--motion-standard, 260ms) var(--ease-editorial, cubic-bezier(0.22,1,0.36,1)),
+                  border-color var(--motion-fast, 160ms) ease;
+    }
+
+    .stats .card:hover {
+      transform: translateY(-3px);
+      border-color: var(--color-border-strong, #000000);
+    }
+
+    .stats .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      font-family: var(--font-ui, "DM Sans", Arial, sans-serif);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-text-primary, #000000);
+    }
+
+    .stats .card-top span:first-child {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: var(--radius-sm, 4px);
+      background: var(--color-surface-alt, #F2BED6);
+      border: 1px solid var(--color-border-strong, #000000);
+    }
+
+    .stats .card:nth-child(2) .card-top span:first-child,
+    .stats .card:nth-child(4) .card-top span:first-child {
+      background: var(--color-accent, #A5DCD1);
+    }
+
+    .stats .card-top span:last-child {
+      color: var(--color-text-secondary, rgba(0,0,0,0.70));
+      font-size: 11px;
+    }
+
+    .stats .card-title {
+      font-family: var(--font-display, "Anton", "Impact", sans-serif);
+      font-size: clamp(1.45rem, 2.3vw, 2.15rem);
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: -0.015em;
+      line-height: 1.02;
+      color: var(--color-text-primary, #000000);
+    }
+
+    .stats .card-desc {
+      font-family: var(--font-body, "DM Sans", Arial, sans-serif);
+      font-size: 15px;
+      line-height: 1.52;
+      font-weight: 400;
+      color: var(--color-text-secondary, rgba(0,0,0,0.70));
+    }
+
+    .logos-wrap {
+      position: relative;
+      z-index: 4;
+      margin-top: clamp(16px, 2vw, 24px);
+    }
+
+    .logos {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px 24px;
+      min-height: 76px;
+      padding: 18px 26px;
+      border-radius: var(--radius-lg, 12px);
+      background: var(--color-surface, #FFFFFF);
+      border: 1px solid rgba(0, 0, 0, 0.28);
+      box-shadow: var(--shadow-editorial, 0 12px 30px rgba(0,0,0,0.10));
+      color: var(--color-text-primary, #000000);
+    }
+
+    #stats-2 .logos {
+      background: var(--color-accent, #A5DCD1);
+      border: 1px solid var(--color-border-strong, #000000);
+    }
+
+    .logos-kicker {
+      font-family: var(--font-ui, "DM Sans", Arial, sans-serif);
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--color-text-primary, #000000);
+      white-space: nowrap;
+    }
+
+    .logos-copy {
+      font-family: var(--font-body, "DM Sans", Arial, sans-serif);
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.5;
+      color: var(--color-text-primary, #000000);
+      flex: 1;
+      min-width: 240px;
+    }
+
+    .logos-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      font-family: var(--font-ui, "DM Sans", Arial, sans-serif);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 12px 22px;
+      border-radius: var(--radius-md, 8px);
+      background: var(--color-primary, #FB0C72);
+      color: var(--color-text-primary, #000000);
+      border: 1px solid var(--color-border-strong, #000000);
+      box-shadow: var(--shadow-sticker, 4px 4px 0 rgba(0,0,0,0.85));
+      white-space: nowrap;
+      transition: transform var(--motion-standard, 260ms) var(--ease-editorial),
+                  background-color var(--motion-fast, 160ms) ease;
+    }
+
+    .logos-cta:hover {
+      background: var(--color-primary-hover, #D90761);
+      transform: translateY(-2px);
+    }
+
+    .split .word { display: inline-block; overflow: hidden; vertical-align: bottom; padding: 0.22em 0.12em; margin: -0.22em -0.12em; }
+    .split .word > span { display: inline-block; will-change: transform, opacity; }
+
+    @media (max-width: 1023px) {
+      .cols { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 767px) {
+      .cols { grid-template-columns: 1fr; }
+      .stats .card { min-height: 164px; }
+      .logos { padding: 16px 20px; }
+    }
+
+    /* ============================================================
+       SEÇÃO 02: PROBLEMA (#stats — Scroll Storytelling Pinned 5 Cenas)
+       ============================================================ */
+    #stats.prob-sec {
+      position: relative;
+      width: 100%;
+      height: 100svh;
+      min-height: 580px;
+      padding: clamp(64px, 8vh, 88px) clamp(20px, 3vw, 44px) clamp(20px, 3.5vh, 36px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      background: #FFF9F4;
+      color: #000000;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+    }
+
+    #stats.prob-sec .sq-field {
+      z-index: 0;
+      transition: opacity 0.2s linear;
+    }
+
+    /* Central Stage + Perimeter Cards Layer */
+    .prob-stage {
+      position: relative;
+      z-index: 2;
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      max-width: 1320px;
+      display: grid;
+      place-items: center;
+    }
+
+    .prob-cards-layer {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .prob-center {
+      position: relative;
+      z-index: 4;
+      width: 100%;
+      max-width: min(1040px, 90vw);
+      display: grid;
+      place-items: center;
+      text-align: center;
+    }
+
+    .prob-scene {
+      grid-area: 1 / 1;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(14px, 2.2vh, 22px);
+      will-change: transform, opacity;
+    }
+
+    .prob-scene--1,
+    .prob-scene--2,
+    .prob-scene--3 {
+      max-width: min(650px, 54vw);
+    }
+
+    .prob-scene--4,
+    .prob-scene--5 {
+      max-width: min(1020px, 88vw);
+    }
+
+    .prob-scene--2,
+    .prob-scene--3,
+    .prob-scene--4,
+    .prob-scene--5 {
+      opacity: 0;
+    }
+
+    .prob-s1-intro {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .prob-title {
+      font-family: var(--font-display, "Anton", "Impact", sans-serif);
+      font-weight: 400;
+      text-transform: uppercase;
+      font-size: clamp(2.35rem, 4.7vw, 4.75rem);
+      line-height: 0.96;
+      letter-spacing: -0.02em;
+      color: #000000;
+      text-wrap: balance;
+    }
+
+    .prob-title--compact {
+      font-size: clamp(1.95rem, 3.85vw, 3.85rem);
+      line-height: 1.0;
+    }
+
+    .prob-s4-q {
+      font-size: clamp(2.5rem, 6.1vw, 6.0rem);
+      line-height: 0.96;
+    }
+
+    .prob-title--finale {
+      font-size: clamp(2.4rem, 5.2vw, 5.2rem);
+      line-height: 0.98;
+      color: #FFF9F4;
+    }
+
+    .prob-hw {
+      display: inline-block;
+      font-family: var(--font-handwritten, "Caveat", cursive);
+      font-weight: 700;
+      text-transform: none;
+      letter-spacing: -0.02em;
+      line-height: 0.88;
+      font-size: 1.15em;
+      color: #FB0C72;
+      transform: rotate(-2deg);
+      padding: 0 0.08em;
+    }
+
+    .prob-hw--seguidores {
+      position: relative;
+      z-index: 2;
+      font-size: 1.62em;
+      line-height: 0.76;
+      top: -0.26em;
+      margin-left: -0.12em;
+      transform: rotate(-3.5deg);
+      padding: 0 0.04em;
+    }
+
+    .prob-hw--quantidade {
+      font-size: 1.44em;
+      line-height: 0.82;
+      padding: 0 0.05em;
+    }
+
+    .prob-pink {
+      color: #FB0C72;
+    }
+
+    .prob-sub {
+      max-width: 580px;
+      font-family: var(--font-body, "DM Sans", Arial, sans-serif);
+      font-size: clamp(16px, 1.55vw, 22px);
+      font-weight: 500;
+      line-height: 1.48;
+      color: rgba(0, 0, 0, 0.84);
+      text-wrap: balance;
+    }
+
+    .prob-s4-a {
+      max-width: min(820px, 82vw);
+      font-size: clamp(18px, 2.2vw, 29px);
+      line-height: 1.4;
+      color: rgba(0, 0, 0, 0.88);
+    }
+
+    .prob-sub--finale {
+      max-width: 680px;
+      color: #FFF9F4;
+      font-size: clamp(17px, 1.65vw, 23px);
+      font-weight: 500;
+    }
+
+    .prob-escolhida {
+      position: relative;
+      display: inline-block;
+      font-weight: 700;
+      color: #000000;
+      white-space: nowrap;
+    }
+
+    .prob-underline-svg {
+      position: absolute;
+      left: -2%;
+      bottom: -5px;
+      width: 104%;
+      height: 10px;
+      overflow: visible;
+      pointer-events: none;
+    }
+
+    .prob-underline-path {
+      fill: none;
+      stroke: #FB0C72;
+      stroke-width: 3.5;
+      stroke-linecap: round;
+    }
+
+    .prob-valor-sticker {
+      display: inline-block;
+      background: #FFF9F4;
+      color: #000000;
+      padding: 0.04em 0.24em 0.06em;
+      border-radius: 6px;
+      border: 2px solid #000000;
+      box-shadow: 5px 5px 0 #000000;
+      transform: rotate(-1.6deg);
+      margin-left: 0.06em;
+    }
+
+    /* ============================================================
+       CARDS & EDITORIAL CUTOUTS (CENAS 01, 02, 03)
+       ============================================================ */
+    .prob-card {
+      position: absolute;
+      will-change: transform, opacity;
+      opacity: 0;
+    }
+
+    /* Editorial Photocard / Paper Cutout Base */
+    .pcard-paper {
+      background: #FFFFFF;
+      color: #000000;
+      border: 1px solid #000000;
+      border-radius: 10px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.10), 4px 4px 0 rgba(0, 0, 0, 0.85);
+      padding: 12px 14px;
+    }
+
+    .pcard-paper--mint { background: #A5DCD1; }
+    .pcard-paper--pink { background: #F2BED6; }
+    .pcard-paper--cream { background: #FFF9F4; }
+
+    .pcard-tape {
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-3deg);
+      width: 44px;
+      height: 14px;
+      background: rgba(242, 190, 214, 0.85);
+      border: 1px solid rgba(0, 0, 0, 0.45);
+    }
+
+    .pcard-tape--mint {
+      background: rgba(165, 220, 209, 0.9);
+    }
+
+    .pcard-kicker {
+      display: block;
+      font-family: var(--font-ui, "DM Sans", Arial, sans-serif);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(0, 0, 0, 0.65);
+    }
+
+    .pcard-stat {
+      font-family: var(--font-display, "Anton", "Impact", sans-serif);
+      font-size: clamp(1.5rem, 2.2vw, 2.1rem);
+      line-height: 1;
+      letter-spacing: -0.01em;
+      color: #000000;
+    }
+
+    .pcard-note {
+      font-family: var(--font-handwritten, "Caveat", cursive);
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 1.05;
+      color: #D90761;
+    }
+
+    /* Scene 01 Card Positions (Desktop >= 1024px) */
+    .c1-likes {
+      top: clamp(24px, 5vh, 52px);
+      left: clamp(12px, 3vw, 48px);
+      width: 178px;
+      transform: rotate(-4deg);
+    }
+
+    .c1-followers {
+      top: clamp(20px, 4.5vh, 48px);
+      right: clamp(12px, 3.2vw, 52px);
+      width: 196px;
+      transform: rotate(3.5deg);
+    }
+
+    .c1-trend {
+      top: 43%;
+      left: clamp(4px, 1.5vw, 24px);
+      width: 174px;
+      transform: rotate(-5.5deg);
+    }
+
+    .c1-post {
+      top: 40%;
+      right: clamp(4px, 1.5vw, 24px);
+      width: 186px;
+      transform: rotate(4deg);
+    }
+
+    .c1-hashtags {
+      bottom: clamp(18px, 4.5vh, 46px);
+      left: clamp(16px, 4vw, 68px);
+      width: 214px;
+      transform: rotate(-2.5deg);
+    }
+
+    .c1-notif {
+      bottom: clamp(16px, 4vh, 42px);
+      right: clamp(16px, 4vw, 64px);
+      width: 236px;
+      transform: rotate(2deg);
+    }
+
+    .c1-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .c1-icon-box {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: #FFF9F4;
+      border: 1px solid #000000;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .c1-trend-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FB0C72;
+      color: #FFF9F4;
+      font-family: var(--font-ui, "DM Sans", Arial, sans-serif);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 3px 9px;
+      border-radius: 999px;
+      border: 1px solid #000000;
+      margin-bottom: 6px;
+    }
+
+    .c1-mini-post-thumb {
+      width: 100%;
+      height: 76px;
+      border-radius: 6px;
+      border: 1px solid #000000;
+      background: linear-gradient(135deg, #F2BED6 0%, #FFF9F4 52%, #A5DCD1 100%);
+      display: grid;
+      place-items: center;
+      font-family: var(--font-display, "Anton", sans-serif);
+      font-size: 18px;
+      letter-spacing: 0.02em;
+      color: #000000;
+      margin: 6px 0 8px;
+    }
+
+    .c1-mini-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    /* Scene 02 — Message Bubbles */
+    .pcard-bubble {
+      background: #FFFFFF;
+      color: #000000;
+      border: 1px solid #000000;
+      border-radius: 16px;
+      padding: 13px 16px;
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.10), 4px 4px 0 rgba(0, 0, 0, 0.85);
+      max-width: 248px;
+    }
+
+    .pcard-bubble--pink { background: #F2BED6; border-bottom-right-radius: 4px; }
+    .pcard-bubble--mint { background: #A5DCD1; border-bottom-left-radius: 4px; }
+    .pcard-bubble--cream { background: #FFF9F4; border-bottom-right-radius: 4px; }
+    .pcard-bubble--white { background: #FFFFFF; border-bottom-left-radius: 4px; }
+
+    .pcard-bubble-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 5px;
+      font-family: var(--font-ui, "DM Sans", Arial, sans-serif);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: rgba(0, 0, 0, 0.62);
+    }
+
+    .pcard-bubble-text {
+      font-family: var(--font-body, "DM Sans", Arial, sans-serif);
+      font-size: 14.5px;
+      font-weight: 600;
+      line-height: 1.35;
+      color: #000000;
+    }
+
+    .pcard-bubble-typing {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #D90761;
+    }
+
+    .c2-msg1 { top: clamp(26px, 6vh, 58px); left: clamp(16px, 4vw, 62px); transform: rotate(-3deg); }
+    .c2-msg2 { top: clamp(28px, 6vh, 56px); right: clamp(16px, 4vw, 56px); transform: rotate(3deg); }
+    .c2-msg3 { bottom: clamp(24px, 6vh, 58px); left: clamp(20px, 4.5vw, 72px); transform: rotate(2.5deg); }
+    .c2-msg4 { bottom: clamp(22px, 5.5vh, 54px); right: clamp(18px, 4vw, 64px); transform: rotate(-2.5deg); }
+
+    /* Scene 03 — 4 Core Symptom Cards (Descontos, Receita caindo, Carrinho/Vendas esquerda, Resultado direita) */
+    .pcard-symptom {
+      width: 244px;
+      background: #FFFFFF;
+      color: #000000;
+      border: 1.5px solid #000000;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12), 5px 5px 0 rgba(0, 0, 0, 0.85);
+    }
+
+    .c3-discount {
+      top: clamp(20px, 5vh, 52px);
+      left: clamp(14px, 3.2vw, 52px);
+      transform: rotate(-3.5deg);
+      background: #FFF9F4;
+      border-style: dashed;
+    }
+
+    .c3-promo-badge {
+      display: inline-block;
+      font-family: var(--font-display, "Anton", sans-serif);
+      font-size: 32px;
+      line-height: 1;
+      padding: 5px 12px;
+      background: #FB0C72;
+      color: #FFF9F4;
+      border: 1px solid #000000;
+      border-radius: 6px;
+      box-shadow: 3px 3px 0 #000000;
+      margin: 8px 0 10px;
+    }
+
+    .c3-content {
+      top: clamp(20px, 5vh, 52px);
+      right: clamp(14px, 3.2vw, 52px);
+      transform: rotate(3deg);
+      background: #F2BED6;
+    }
+
+    .c3-chart-box {
+      background: #FFFFFF;
+      border: 1px solid #000000;
+      border-radius: 8px;
+      padding: 8px 10px;
+      margin: 8px 0 0;
+    }
+
+    .c3-rev-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 6px;
+      margin: 2px 0 4px;
+      font-family: var(--font-ui, "DM Sans", Arial, sans-serif);
+    }
+
+    .c3-rev-old {
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(0, 0, 0, 0.45);
+      text-decoration: line-through;
+    }
+
+    .c3-rev-new {
+      font-size: 13px;
+      font-weight: 800;
+      color: #D90761;
+    }
+
+    .c3-sales {
+      bottom: clamp(18px, 4.5vh, 46px);
+      left: clamp(24px, 5vw, 88px);
+      transform: rotate(2.5deg);
+      background: #FFF9F4;
+    }
+
+    .c3-sales-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      background: #FFFFFF;
+      border: 1px solid #000000;
+      border-radius: 8px;
+      padding: 10px 12px;
+      margin: 8px 0 0;
+    }
+
+    .c3-sales-stat {
+      font-family: var(--font-display, "Anton", sans-serif);
+      font-size: 26px;
+      line-height: 1;
+      color: #FB0C72;
+    }
+
+    .c3-sales-badge {
+      font-family: var(--font-ui, "DM Sans", Arial, sans-serif);
+      font-size: 10px;
+      font-weight: 800;
+      padding: 3px 7px;
+      border-radius: 5px;
+      background: #F2BED6;
+      border: 1px solid #000000;
+    }
+
+    .c3-marketing {
+      bottom: clamp(18px, 4.5vh, 46px);
+      right: clamp(24px, 5vw, 88px);
+      transform: rotate(-2deg);
+      background: #A5DCD1;
+    }
+
+    .c3-result-box {
+      background: #FFFFFF;
+      border: 1px solid #000000;
+      border-radius: 8px;
+      padding: 8px 10px;
+      margin: 8px 0 0;
+    }
+
+    .c3-bars-nums {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      align-items: end;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .c3-bar-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .c3-bar-col small {
+      font-family: var(--font-ui, "DM Sans", Arial, sans-serif);
+      font-size: 10px;
+      font-weight: 800;
+      line-height: 1;
+      color: #000000;
+    }
+
+    .c3-bar-col:last-child small {
+      color: #D90761;
+    }
+
+    .c3-bar-fill {
+      display: block;
+      width: 100%;
+      border-radius: 3px;
+      border: 1px solid #000000;
+      background: #F2BED6;
+    }
+
+    .c3-bar-fill--1 { height: 26px; background: #A5DCD1; }
+    .c3-bar-fill--2 { height: 18px; }
+    .c3-bar-fill--3 { height: 12px; }
+    .c3-bar-fill--4 { height: 6px; background: #FB0C72; }
+
+    .pcard-symp-text {
+      font-family: var(--font-body, "DM Sans", Arial, sans-serif);
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.38;
+      color: #000000;
+    }
+
+    /* Tablet (768px - 1023px): reduce simultaneous peripheral items, push clearly into upper/lower bands */
+    @media (max-width: 1023px) {
+      .prob-scene--1,
+      .prob-scene--2,
+      .prob-scene--3 {
+        max-width: min(560px, 80vw);
+      }
+      .prob-scene--4,
+      .prob-scene--5 {
+        max-width: 86vw;
+      }
+      .c1-trend,
+      .c1-hashtags {
+        display: none;
+      }
+      .c1-likes { top: 18px; left: 14px; width: 164px; }
+      .c1-followers { top: 18px; right: 14px; width: 176px; }
+      .c1-post { top: auto; bottom: 18px; left: 14px; right: auto; width: 174px; }
+      .c1-notif { bottom: 18px; right: 14px; width: 214px; }
+
+      .c2-msg1 { top: 18px; left: 14px; }
+      .c2-msg2 { top: 18px; right: 14px; }
+      .c2-msg3 { bottom: 18px; left: 14px; }
+      .c2-msg4 { bottom: 18px; right: 14px; }
+
+      .pcard-symptom { width: 214px; padding: 13px; }
+      .c3-discount { top: 16px; left: 14px; }
+      .c3-content { top: 16px; right: 14px; }
+      .c3-sales { bottom: 16px; left: 18px; }
+      .c3-marketing { bottom: 16px; right: 18px; }
+    }
+
+    /* Mobile (< 768px): Vertical 3-zone layout (top cards / centered headline / bottom cards) */
+    @media (max-width: 767px) {
+      #stats.prob-sec {
+        height: 100svh;
+        min-height: 540px;
+        padding: 72px 16px 20px;
+      }
+      .prob-center {
+        max-width: 94vw;
+        padding: 0 4px;
+      }
+      .prob-scene--1,
+      .prob-scene--2,
+      .prob-scene--3,
+      .prob-scene--4,
+      .prob-scene--5 {
+        max-width: 100%;
+      }
+      .prob-title {
+        font-size: clamp(1.85rem, 7.6vw, 2.55rem);
+        line-height: 0.98;
+      }
+      .prob-title--compact {
+        font-size: clamp(1.6rem, 6.5vw, 2.2rem);
+      }
+      .prob-s4-q {
+        font-size: clamp(2.05rem, 8.6vw, 2.85rem);
+        line-height: 0.96;
+      }
+      .prob-title--finale {
+        font-size: clamp(1.9rem, 7.8vw, 2.65rem);
+      }
+      .prob-sub {
+        font-size: 14.5px;
+        line-height: 1.44;
+      }
+      .prob-s4-a {
+        font-size: 17px;
+        line-height: 1.42;
+      }
+      .prob-sub--finale {
+        font-size: 15.5px;
+        line-height: 1.44;
+      }
+
+      /* Mobile reduced card set (no overlap with central title band) */
+      .c1-trend,
+      .c1-hashtags,
+      .c1-notif,
+      .c2-msg3 {
+        display: none;
+      }
+      .pcard-paper { padding: 9px 11px; }
+      .pcard-stat { font-size: 1.35rem; }
+      .c1-likes { top: 12px; left: 4px; width: 146px; transform: rotate(-2.5deg); }
+      .c1-followers { top: 12px; right: 4px; width: 164px; transform: rotate(2.5deg); }
+      .c1-post {
+        top: auto;
+        bottom: 10px;
+        left: 0;
+        right: 0;
+        margin-inline: auto;
+        width: 196px;
+        transform: rotate(1.5deg);
+      }
+      .c1-mini-post-thumb { height: 42px; font-size: 14px; margin: 4px 0 5px; }
+
+      .pcard-bubble { max-width: 172px; padding: 9px 11px; }
+      .pcard-bubble-text { font-size: 12.5px; }
+      .c2-msg1 { top: 12px; left: 4px; transform: rotate(-2deg); }
+      .c2-msg2 { top: 12px; right: 4px; transform: rotate(2deg); }
+      .c2-msg4 {
+        bottom: 10px;
+        left: 0;
+        right: 0;
+        margin-inline: auto;
+        width: 232px;
+        max-width: 240px;
+        transform: rotate(-1.5deg);
+      }
+
+      .pcard-symptom { width: 168px; padding: 9px 10px; }
+      .c3-promo-badge { font-size: 22px; margin: 4px 0 6px; padding: 3px 8px; }
+      .c3-chart-box,
+      .c3-sales-strip,
+      .c3-result-box { padding: 6px 7px; margin: 5px 0 0; }
+      .c3-bar-fill--1 { height: 20px; }
+      .c3-bar-fill--2 { height: 14px; }
+      .c3-bar-fill--3 { height: 9px; }
+      .c3-bar-fill--4 { height: 5px; }
+      .c3-bar-col small { font-size: 9px; }
+      .c3-sales-stat { font-size: 20px; }
+      .c3-rev-old { font-size: 9.5px; }
+      .c3-rev-new { font-size: 11px; }
+      .pcard-symp-text { font-size: 11.5px; line-height: 1.28; }
+      .c3-discount { top: 12px; left: 4px; transform: rotate(-2deg); }
+      .c3-content { top: 12px; right: 4px; transform: rotate(2deg); }
+      .c3-sales { bottom: 10px; left: 4px; transform: rotate(2deg); }
+      .c3-marketing { bottom: 10px; right: 4px; transform: rotate(-2deg); }
+    }
+
+    /* Reduced Motion Accessibility Fallback (No pinning, clean readable vertical narrative) */
+    @media (prefers-reduced-motion: reduce) {
+      #stats.prob-sec {
+        height: auto;
+        min-height: auto;
+        padding: 88px 20px 64px;
+        gap: 32px;
+      }
+      .prob-stage {
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+      }
+      .prob-cards-layer {
+        position: static;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+        order: 2;
+      }
+      .prob-card {
+        position: static;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .prob-center {
+        max-width: 760px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        order: 1;
+      }
+      .prob-scene {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .prob-scene--5 {
+        background: #FB0C72;
+        color: #FFF9F4;
+        padding: 36px 24px;
+        border-radius: 16px;
+        border: 1.5px solid #000000;
+        box-shadow: 6px 6px 0 #000000;
+      }
+    }
+
+    /* ============================================================
+       SEÇÃO 03: SOLUÇÃO (#loop — O Caderno de Direção 3D Wire-O)
+       ============================================================ */
+    #loop.sol-sec {
+      --nb-pink: #FB0C72;
+      --nb-pastel: #F2BED6;
+      --nb-mint: #A5DCD1;
+      --nb-cream: #FFF9F4;
+      --nb-ink: #000000;
+
+      position: relative;
+      width: 100%;
+      height: 100svh;
+      min-height: 620px;
+      overflow: hidden;
+      background: radial-gradient(circle at 50% 42%, #FFFFFF 0%, #FFF9F4 58%, #F9EFE7 100%);
+      color: var(--nb-ink);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+      font-family: var(--font-body, "DM Sans", Arial, sans-serif);
+    }
+
+    #loop-root {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .nb-stage {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      user-select: none;
+    }
+
+    .nb-canvas-host {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .nb-cta-wrap {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: clamp(38px, 6.8vh, 66px);
+      z-index: 4;
+      display: flex;
+      justify-content: center;
+      pointer-events: none;
+    }
+
+    .nb-open-btn {
+      pointer-events: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 28px;
+      border-radius: 6px;
+      border: 1.5px solid #000000;
+      background: #FFF9F4;
+      color: #000000;
+      box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.9);
+      font-family: var(--font-ui, "DM Sans", Arial, sans-serif);
+      font-size: 13.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1), background-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .nb-open-btn:hover {
+      background: #FB0C72;
+      color: #FFF9F4;
+      transform: translate(-1px, -2px);
+      box-shadow: 5px 6px 0 rgba(0, 0, 0, 0.95);
+    }
+
+    .nb-open-btn:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.9);
+    }
+
+    .nb-controls {
+      position: absolute;
+      left: 50%;
+      bottom: clamp(14px, 2.4vh, 26px);
+      transform: translateX(-50%);
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 12px;
+      border-radius: 8px;
+      border: 1.5px solid #000000;
+      background: #FFF9F4;
+      box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.88);
+      max-width: calc(100vw - 24px);
+    }
+
+    .nb-controls-group {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nb-ctrl-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 6px 11px;
+      border-radius: 5px;
+      border: 1px solid rgba(0, 0, 0, 0.24);
+      background: #FFFFFF;
+      color: #000000;
+      font-family: var(--font-ui, "DM Sans", Arial, sans-serif);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+    }
+
+    .nb-ctrl-btn:hover:not(:disabled) {
+      background: #F2BED6;
+      border-color: #000000;
+    }
+
+    .nb-ctrl-btn:disabled {
+      opacity: 0.36;
+      cursor: default;
+    }
+
+    .nb-ctrl-btn--close {
+      background: #000000;
+      color: #FFF9F4;
+      border-color: #000000;
+    }
+
+    .nb-ctrl-btn--close:hover:not(:disabled) {
+      background: #FB0C72;
+      color: #FFF9F4;
+    }
+
+    .nb-page-counter {
+      font-family: var(--font-ui, "DM Sans", Arial, sans-serif);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: #000000;
+      padding: 0 6px;
+      white-space: nowrap;
+    }
+
+    /* Accessible reduced-motion / non-WebGL fallback */
+    .nb-fallback {
+      width: 100%;
+      min-height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(24px, 4vw, 48px) clamp(16px, 3vw, 40px);
+    }
+
+    .nb-fallback-card {
+      width: 100%;
+      max-width: 960px;
+      background: #FFFFFF;
+      border: 1.5px solid #000000;
+      border-radius: 12px;
+      box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.9);
+      padding: clamp(20px, 3vw, 36px);
+    }
+
+    .nb-fallback-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .nb-fallback-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(0, 0, 0, 0.65);
+    }
+
+    .nb-fallback-cover {
+      background: #F2BED6;
+      border: 1.5px solid #000000;
+      border-radius: 8px;
+      padding: clamp(28px, 5vw, 56px) 24px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .nb-fallback-brand {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+    }
+
+    .nb-fallback-title {
+      font-family: var(--font-display, "Anton", sans-serif);
+      font-size: clamp(2.1rem, 5vw, 3.6rem);
+      line-height: 0.95;
+    }
+
+    .nb-fallback-sub {
+      font-family: var(--font-handwritten, "Caveat", cursive);
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: #FB0C72;
+    }
+
+    .nb-fallback-spread {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .nb-fallback-page {
+      background: #FFF9F4;
+      border: 1.5px solid #000000;
+      border-radius: 8px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .nb-fallback-page-title {
+      font-family: var(--font-display, "Anton", sans-serif);
+      font-size: clamp(1.4rem, 2.6vw, 2.1rem);
+      line-height: 1.02;
+    }
+
+    .nb-fallback-copy {
+      font-size: 16px;
+      line-height: 1.45;
+      font-weight: 500;
+    }
+
+    .nb-fallback-nav {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 6px;
+    }
+
+    @media (max-width: 767px) {
+      .nb-controls {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 6px 8px;
+        gap: 6px;
+      }
+
+      .nb-ctrl-btn {
+        padding: 5px 8px;
+        font-size: 11px;
+      }
+
+      .nb-fallback-spread {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ============================================================
+       SEÇÃO 05: BACKSTAGE / PROJETOS AUTORAIS (#reelmark)
+       ============================================================ */
+    #reelmark {
+      position: relative;
+      width: 100%;
+    }
+
+    /* ============================================================
+       SEÇÃO 06: PROCESSO (#processo)
+       ============================================================ */
+    #processo.proc-sec {
+      position: relative;
+      width: 100%;
+      background: var(--color-background, #FFF9F4);
+      color: var(--color-text-primary, #000000);
+      border-top: 1px solid var(--color-border, rgba(0,0,0,0.16));
+      padding: clamp(72px, 9vh, 128px) clamp(20px, 3vw, 40px);
+      font-family: var(--font-body, "DM Sans", Arial, sans-serif);
+    }
+
+    .proc-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .proc-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: clamp(32px, 4.5vh, 48px);
+    }
+
+    .proc-badge {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 6px 16px;
+      border-radius: var(--radius-pill, 999px);
+      background: var(--color-surface-alt, #F2BED6);
+      color: var(--color-text-primary, #000000);
+      border: 1px solid var(--color-border-strong, #000000);
+      box-shadow: var(--shadow-sticker, 4px 4px 0 rgba(0,0,0,0.85));
+      font-family: var(--font-ui, "DM Sans", Arial, sans-serif);
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .proc-title {
+      font-family: var(--font-display, "Anton", "Impact", sans-serif);
+      font-weight: 400;
+      text-transform: uppercase;
+      line-height: 0.98;
+      letter-spacing: -0.02em;
+      font-size: clamp(2.5rem, 5vw, 5.5rem);
+      color: var(--color-text-primary, #000000);
+      max-width: 860px;
+    }
+
+    .proc-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .proc-step {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 24px 20px;
+      border-radius: var(--radius-lg, 12px);
+      background: var(--color-surface, #FFFFFF);
+      border: 1px solid rgba(0, 0, 0, 0.28);
+      box-shadow: var(--shadow-editorial, 0 12px 30px rgba(0,0,0,0.10));
+      transition: transform var(--motion-standard, 260ms) var(--ease-editorial),
+                  border-color var(--motion-fast, 160ms) ease;
+    }
+
+    .proc-step:hover {
+      transform: translateY(-3px);
+      border-color: var(--color-border-strong, #000000);
+    }
+
+    .proc-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-pill, 999px);
+      background: var(--color-surface-alt, #F2BED6);
+      border: 1px solid var(--color-border-strong, #000000);
+      color: var(--color-text-primary, #000000);
+      font-family: var(--font-ui, "DM Sans", Arial, sans-serif);
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .proc-step:nth-child(even) .proc-num {
+      background: var(--color-accent, #A5DCD1);
+    }
+
+    .proc-step:last-child .proc-num {
+      background: var(--color-primary, #FB0C72);
+    }
+
+    .proc-step h3 {
+      font-family: var(--font-display, "Anton", "Impact", sans-serif);
+      font-size: clamp(1.4rem, 1.9vw, 1.75rem);
+      font-weight: 400;
+      text-transform: uppercase;
+      line-height: 1.04;
+      letter-spacing: -0.015em;
+      color: var(--color-text-primary, #000000);
+      margin-top: 12px;
+    }
+
+    .proc-step p {
+      font-family: var(--font-body, "DM Sans", Arial, sans-serif);
+      font-size: 15px;
+      line-height: 1.56;
+      color: var(--color-text-secondary, rgba(0,0,0,0.70));
+    }
+
+    @media (max-width: 1080px) {
+      .proc-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .proc-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="app">
+    <main>
+      <div id="root"></div>
+      <script type="module" src="/src/main.tsx"></script>
+
+      <!-- ====================================================
+           02 — PROBLEMA (#stats — Scroll Storytelling 5 Cenas)
+           ==================================================== -->
+      <section id="stats" class="prob-sec" aria-label="02 — Problema">
+        <div class="sq-field" aria-hidden="true"></div>
+
+        <div class="prob-stage">
+          <!-- Camada de Cards & Recortes Editoriais (Perímetro) -->
+          <div class="prob-cards-layer" aria-hidden="true">
+            <!-- CENA 01: Cards de esforço em redes sociais -->
+            <div class="prob-card c1-likes pcard-paper">
+              <span class="pcard-tape"></span>
+              <div class="c1-row">
+                <div class="c1-icon-box">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#FB0C72" stroke="#000" stroke-width="1.8">
+                    <path d="M12 21s-7-4.5-9.5-9C.5 8.5 2.7 4.5 6.8 4.5c2.1 0 4 1.1 5.2 2.9 1.2-1.8 3.1-2.9 5.2-2.9 4.1 0 6.3 4 4.3 7.5C19 16.5 12 21 12 21z" />
+                  </svg>
+                </div>
+                <div>
+                  <span class="pcard-kicker">CURTIDAS</span>
+                  <span class="pcard-stat">10</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="prob-card c1-followers pcard-paper pcard-paper--mint">
+              <span class="pcard-tape pcard-tape--mint"></span>
+              <span class="pcard-kicker">CRESCIMENTO</span>
+              <div class="c1-row" style="justify-content: space-between; margin-top: 2px;">
+                <span class="pcard-stat" style="color: #D90761;">-48</span>
+                <svg width="56" height="24" viewBox="0 0 56 24" fill="none">
+                  <path d="M2 4 L16 10 L28 9 L40 16 L53 21" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <circle cx="53" cy="21" r="2.8" fill="#FB0C72" stroke="#000" stroke-width="1.2" />
+                </svg>
+              </div>
+              <span class="pcard-kicker" style="color:#000; margin-top:2px;">PERDENDO SEGUIDORES</span>
+            </div>
+
+            <div class="prob-card c1-trend pcard-paper pcard-paper--pink">
+              <span class="c1-trend-pill">● TREND</span>
+              <p class="pcard-symp-text" style="font-size:12.5px;">Áudio em alta · 18K reels</p>
+              <span class="pcard-note" style="display:block; margin-top:4px;">bora gravar hoje!</span>
+            </div>
+
+            <div class="prob-card c1-post pcard-paper">
+              <span class="pcard-kicker">@SUAMARCA · FEED</span>
+              <div class="c1-mini-post-thumb">POST DO DIA</div>
+              <div class="c1-mini-actions">
+                <span>♥ 5 · 💬 2</span>
+                <span class="pcard-note">3h editando...</span>
+              </div>
+            </div>
+
+            <div class="prob-card c1-hashtags pcard-paper pcard-paper--cream">
+              <span class="pcard-kicker">HASHTAGS EM ALTA</span>
+              <p class="pcard-symp-text" style="font-size:12.5px; margin-top:4px;">#marketing #viral #reels #fyp #dica</p>
+              <span class="pcard-note" style="display:block; margin-top:4px;">será que agora vai?</span>
+            </div>
+
+            <div class="prob-card c1-notif pcard-paper">
+              <div class="c1-row">
+                <div class="c1-icon-box" style="background:#F2BED6;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2">
+                    <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
+                    <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                  </svg>
+                </div>
+                <div>
+                  <span class="pcard-kicker">ENGAJAMENTO</span>
+                  <p class="pcard-symp-text" style="font-size:12.5px;">10 novos comentários</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- CENA 02: Balões de mensagens de clientes -->
+            <div class="prob-card c2-msg1 pcard-bubble pcard-bubble--white">
+              <div class="pcard-bubble-meta">
+                <span>DM · CLIENTE</span>
+                <span>11:08</span>
+              </div>
+              <p class="pcard-bubble-text">"Tem desconto?"</p>
+            </div>
+
+            <div class="prob-card c2-msg2 pcard-bubble pcard-bubble--pink">
+              <div class="pcard-bubble-meta">
+                <span>WHATSAPP</span>
+                <span>14:22 ✓✓</span>
+              </div>
+              <p class="pcard-bubble-text">"Na outra loja tá <span class="prob-pink" style="font-weight:800;">mais barato</span>."</p>
+            </div>
+
+            <div class="prob-card c2-msg3 pcard-bubble pcard-bubble--mint">
+              <div class="pcard-bubble-meta">
+                <span>ORÇAMENTO</span>
+                <span>16:45</span>
+              </div>
+              <p class="pcard-bubble-text">"Consegue fazer por menos?"</p>
+            </div>
+
+            <div class="prob-card c2-msg4 pcard-bubble pcard-bubble--cream">
+              <div class="pcard-bubble-meta">
+                <span>MENSAGEM</span>
+                <span class="pcard-bubble-typing">Digitando...</span>
+              </div>
+              <p class="pcard-bubble-text">"Vou pesquisar mais um pouquinho..."</p>
+            </div>
+
+            <!-- CENA 03: Quatro cards de sintomas e vendas em queda -->
+            <div class="prob-card c3-discount pcard-symptom">
+              <span class="pcard-kicker">CARD 01 · DESCONTOS</span>
+              <span class="c3-promo-badge">-30%</span>
+              <p class="pcard-symp-text">Mais um desconto pra tentar vender.</p>
+            </div>
+
+            <div class="prob-card c3-content pcard-symptom">
+              <span class="pcard-kicker">CARD 02 · RECEITA</span>
+              <div class="c3-chart-box">
+                <span class="pcard-kicker" style="font-size:8.5px;">VENDAS DO MÊS ↓ -58%</span>
+                <div class="c3-rev-row">
+                  <span class="c3-rev-old">R$ 8.400</span>
+                  <span class="c3-rev-new">R$ 3.520</span>
+                </div>
+                <svg width="100%" height="34" viewBox="0 0 180 34" preserveAspectRatio="none" fill="none">
+                  <path d="M2 5 L42 11 L82 10 L124 22 L176 31 L176 34 L2 34 Z" fill="rgba(251, 12, 114, 0.16)" />
+                  <path d="M2 5 L42 11 L82 10 L124 22 L176 31" stroke="#FB0C72" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+                  <circle cx="176" cy="31" r="3" fill="#FB0C72" stroke="#000" stroke-width="1.2" />
+                </svg>
+              </div>
+            </div>
+
+            <div class="prob-card c3-sales pcard-symptom">
+              <span class="pcard-kicker">CARD 03 · CONVERSÃO</span>
+              <div class="c3-sales-strip">
+                <div>
+                  <span class="pcard-kicker" style="font-size:8.5px;">PEDIDOS</span>
+                  <span class="c3-sales-stat">-47%</span>
+                </div>
+                <span class="c3-sales-badge">↓ EM QUEDA</span>
+              </div>
+            </div>
+
+            <div class="prob-card c3-marketing pcard-symptom">
+              <span class="pcard-kicker">CARD 04 · RESULTADO</span>
+              <div class="c3-result-box">
+                <div class="c3-rev-row" style="margin-bottom:0;">
+                  <span class="pcard-kicker" style="font-size:8.5px;">VENDAS / MÊS</span>
+                  <span class="c3-rev-new">-72% ↓</span>
+                </div>
+                <div class="c3-bars-nums" aria-hidden="true">
+                  <div class="c3-bar-col"><span class="c3-bar-fill c3-bar-fill--1"></span><small>64</small></div>
+                  <div class="c3-bar-col"><span class="c3-bar-fill c3-bar-fill--2"></span><small>41</small></div>
+                  <div class="c3-bar-col"><span class="c3-bar-fill c3-bar-fill--3"></span><small>27</small></div>
+                  <div class="c3-bar-col"><span class="c3-bar-fill c3-bar-fill--4"></span><small>18</small></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Camada Central de Tipografia Narrativa (5 Cenas) -->
+          <div class="prob-center">
+            <!-- Cena 01 -->
+            <div class="prob-scene prob-scene--1">
+              <div class="prob-s1-intro">
+                <h2 class="prob-title">
+                  Você publica. Segue trends. Tenta aumentar os <span class="prob-hw prob-hw--seguidores">seguidores.</span>
+                </h2>
+              </div>
+            </div>
+
+            <!-- Cena 02 -->
+            <div class="prob-scene prob-scene--2">
+              <h2 class="prob-title prob-title--compact">
+                E mesmo assim, continua ouvindo que a concorrência faz <span class="prob-pink">mais barato.</span>
+              </h2>
+            </div>
+
+            <!-- Cena 03 -->
+            <div class="prob-scene prob-scene--3">
+              <h2 class="prob-title prob-title--compact">
+                Desconto atrás de desconto.<br />
+                Conteúdo que <span class="prob-pink">não diferencia.</span><br />
+                Marketing sem direção.
+              </h2>
+            </div>
+
+            <!-- Cena 04 -->
+            <div class="prob-scene prob-scene--4">
+              <h2 class="prob-title prob-s4-q">
+                E se o problema não for a <span class="prob-hw prob-hw--quantidade">quantidade</span> de posts?
+              </h2>
+              <p class="prob-sub prob-s4-a">
+                Postar mais não resolve quando sua marca ainda não consegue comunicar por que merece ser
+                <span class="prob-escolhida">escolhida.<svg class="prob-underline-svg" viewBox="0 0 180 12" preserveAspectRatio="none" aria-hidden="true"><path class="prob-underline-path" d="M2 8 C 46 3, 128 10, 178 4" /></svg></span>
+              </p>
+            </div>
+
+            <!-- Cena 05 -->
+            <div class="prob-scene prob-scene--5">
+              <h2 class="prob-title prob-title--finale prob-s5-main">
+                Se o cliente só enxerga o preço, ele não entendeu o <span class="prob-valor-sticker">VALOR.</span>
+              </h2>
+              <p class="prob-sub prob-sub--finale prob-s5-q">
+                E a pergunta que roda na sua cabeça é sempre a mesma: "Tá, mas o que eu preciso fazer pra mudar esse cenário?"
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================
+           03 — SOLUÇÃO (#loop — O Caderno de Direção 3D Wire-O)
+           ==================================================== -->
+      <section class="sol-sec" id="loop" aria-label="03 — Solução: O Caderno de Direção">
+        <div id="loop-root"></div>
+      </section>
+
+      <!-- ====================================================
+           04 — ENTREGAS (#stats-2)
+           ==================================================== -->
+      <section id="stats-2" aria-label="04 — Entregas">
+        <div id="entregas-root"></div>
+      </section>
+
+      <!-- ====================================================
+           05 — BACKSTAGE / PORTFÓLIO AUTORAL (#reelmark)
+           ==================================================== -->
+      <section id="reelmark" aria-label="05 — Backstage e Projetos Autorais">
+        <div id="backstage-root"></div>
+      </section>
+
+      <!-- ====================================================
+           06 — PROCESSO (#processo)
+           ==================================================== -->
+      <section id="processo" class="proc-sec" aria-label="06 — Processo">
+        <div class="proc-inner">
+          <div class="proc-head">
+            <div>
+              <span class="proc-badge">PROCESSO</span>
+              <h2 class="proc-title">Criatividade sem organização vira <span class="hw-accent">bagunça.</span></h2>
+            </div>
+          </div>
+
+          <div class="proc-grid">
+            <article class="proc-step">
+              <div>
+                <span class="proc-num">01</span>
+                <h3>01. Primeiro, vamos conversar.</h3>
+              </div>
+              <div class="proc-illo" data-proc-illo="0" aria-hidden="true"></div>
+              <p>Conheço seu negócio, entendo suas necessidades e apresento como meu trabalho pode contribuir para seus objetivos.</p>
+            </article>
+
+            <article class="proc-step">
+              <div>
+                <span class="proc-num">02</span>
+                <h3>02. Depois, conheço sua marca de verdade.</h3>
+              </div>
+              <div class="proc-illo" data-proc-illo="1" aria-hidden="true"></div>
+              <p>Através de briefing e onboarding, investigo sua identidade, seu público e o cenário atual da comunicação.</p>
+            </article>
+
+            <article class="proc-step">
+              <div>
+                <span class="proc-num">03</span>
+                <h3>03. Construímos a direção.</h3>
+              </div>
+              <div class="proc-illo" data-proc-illo="2" aria-hidden="true"></div>
+              <p>Desenvolvo a estratégia e organizo o calendário editorial, apresentado para sua aprovação.</p>
+            </article>
+
+            <article class="proc-step">
+              <div>
+                <span class="proc-num">04</span>
+                <h3>04. Tiramos o planejamento do papel.</h3>
+              </div>
+              <div class="proc-illo" data-proc-illo="3" aria-hidden="true"></div>
+              <p>Conduzo a criação, as aprovações e a publicação dos conteúdos, com até duas rodadas de ajustes por peça ou projeto.</p>
+            </article>
+
+            <article class="proc-step">
+              <div>
+                <span class="proc-num">05</span>
+                <h3>05. Acompanhamos e ajustamos a rota.</h3>
+              </div>
+              <div class="proc-illo" data-proc-illo="4" aria-hidden="true"></div>
+              <p>Analiso os indicadores das redes sociais e utilizo informações compartilhadas sobre o negócio para orientar as próximas decisões.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Backstage Section 05 é montada diretamente no fluxo de scroll sem modais -->
+    </main>
+
+    <!-- 07 — CTA FINAL & Rodapé montado pelo React -->
+    <div id="footer-root"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+
+  <script>
+    const splitEl = (el) => {
+      const frag = document.createDocumentFragment();
+      const wrapWord = (nodeOrText) => {
+        const outer = document.createElement('span');
+        outer.className = 'word';
+        const inner = document.createElement('span');
+        if (typeof nodeOrText === 'string') {
+          inner.textContent = nodeOrText;
+        } else {
+          inner.appendChild(nodeOrText);
+        }
+        outer.appendChild(inner);
+        return outer;
+      };
+      Array.from(el.childNodes).forEach((node) => {
+        if (node.nodeType === Node.TEXT_NODE) {
+          const tokens = (node.textContent || '').split(/(\s+)/);
+          tokens.forEach((tok) => {
+            if (!tok) return;
+            if (/^\s+$/.test(tok)) {
+              frag.appendChild(document.createTextNode(' '));
+            } else {
+              frag.appendChild(wrapWord(tok));
+            }
+          });
+        } else if (node.nodeType === Node.ELEMENT_NODE && node.tagName === 'BR') {
+          frag.appendChild(node.cloneNode());
+        } else if (node.nodeType === Node.ELEMENT_NODE) {
+          frag.appendChild(wrapWord(node.cloneNode(true)));
+        }
+      });
+      el.replaceChildren(frag);
+    };
+
+    const ease = 'cubic-bezier(0.22, 1, 0.36, 1)';
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    gsap.registerPlugin(ScrollTrigger);
+
+    // ============================================================
+    // 1. Animação de malha de quadrados (#stats & #stats-2)
+    // ============================================================
+    function initSquares(sectionSelector) {
+      const host = document.querySelector(`${sectionSelector} .sq-field`);
+      if (!host) return;
+      const grid = document.createElement('div');
+      grid.className = 'sq-grid';
+      host.appendChild(grid);
+
+      let cells = [];
+      let timer = null;
+
+      function layout() {
+        const w = host.clientWidth || innerWidth;
+        const h = host.clientHeight || innerHeight;
+        const size = w < 640 ? 64 : 92;
+        const cols = Math.max(4, Math.round(w / size));
+        const rows = Math.max(4, Math.round(h / size));
+        grid.style.setProperty('--cols', cols);
+        grid.style.setProperty('--rows', rows);
+        const total = cols * rows;
+        if (grid.children.length === total) return;
+        grid.innerHTML = '';
+        cells = Array.from({ length: total }, () => {
+          const d = document.createElement('div');
+          d.className = 'sq-cell';
+          grid.appendChild(d);
+          return d;
+        });
+      }
+
+      function tick() {
+        if (!cells.length) return;
+        cells.forEach(c => c.classList.remove('is-on', 'is-soft'));
+        const onCount = Math.max(4, Math.round(cells.length * 0.08));
+        const softCount = Math.max(6, Math.round(cells.length * 0.12));
+        for (let i = 0; i < onCount; i++) {
+          cells[(Math.random() * cells.length) | 0].classList.add('is-on');
+        }
+        for (let i = 0; i < softCount; i++) {
+          const c = cells[(Math.random() * cells.length) | 0];
+          if (!c.classList.contains('is-on')) c.classList.add('is-soft');
+        }
+      }
+
+      layout();
+      tick();
+      if (!reduce) {
+        const io = new IntersectionObserver((entries) => {
+          const visible = entries.some(e => e.isIntersecting);
+          if (visible && !timer) {
+            timer = setInterval(tick, 1800);
+          } else if (!visible && timer) {
+            clearInterval(timer);
+            timer = null;
+          }
+        }, { rootMargin: '150px 0px' });
+        io.observe(host);
+      }
+      addEventListener('resize', () => { layout(); tick(); });
+    }
+    initSquares('#stats');
+
+    // ============================================================
+    // 2. SEÇÃO 02 (#stats) — SCROLL STORYTELLING 5 CENAS
+    // ============================================================
+    function initProblemSection() {
+      const sec = document.getElementById('stats');
+      if (!sec || typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+      const q = gsap.utils.selector(sec);
+      const stepLabel = sec.querySelector('.prob-step-label');
+      const trackFill = sec.querySelector('.prob-track-fill');
+      const underlinePath = sec.querySelector('.prob-underline-path');
+
+      if (underlinePath && typeof underlinePath.getTotalLength === 'function') {
+        const len = underlinePath.getTotalLength();
+        underlinePath.style.strokeDasharray = String(len);
+        underlinePath.style.strokeDashoffset = String(len);
+      }
+
+      const mm = gsap.matchMedia();
+
+      mm.add('(prefers-reduced-motion: no-preference)', () => {
+        const isMobile = matchMedia('(max-width: 767px)').matches;
+        const isTablet = matchMedia('(max-width: 1023px)').matches && !isMobile;
+
+        // Suave entrada da Cena 01 antes de fixar na tela
+        const introWrap = sec.querySelector('.prob-s1-intro');
+        if (introWrap) {
+          gsap.fromTo(
+            introWrap,
+            { y: 24, opacity: 0.15 },
+            {
+              y: 0,
+              opacity: 1,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: sec,
+                start: 'top 80%',
+                end: 'top 18%',
+                scrub: true,
+                refreshPriority: 3,
+              },
+            }
+          );
+        }
+
+        const c1Cards = q('.c1-likes, .c1-followers, .c1-trend, .c1-post, .c1-hashtags, .c1-notif');
+        const c2Cards = q('.c2-msg1, .c2-msg2, .c2-msg3, .c2-msg4');
+        const c3Cards = q('.c3-discount, .c3-content, .c3-sales, .c3-marketing');
+        const scrollDistance = isMobile ? '+=310%' : isTablet ? '+=370%' : '+=420%';
+
+        // Estado inicial limpo e determinístico
+        gsap.set(q('.prob-scene--1'), { opacity: 1, y: 0 });
+        gsap.set(q('.prob-scene--2, .prob-scene--3, .prob-scene--4, .prob-scene--5'), { opacity: 0, y: 24 });
+        gsap.set(q('.prob-s4-a'), { opacity: 0, y: 18 });
+        gsap.set(q('.prob-s5-main'), { opacity: 0, y: 22 });
+        gsap.set(q('.prob-s5-q'), { opacity: 0, y: 16 });
+        gsap.set([...c1Cards, ...c2Cards, ...c3Cards], { opacity: 0 });
+
+        const tl = gsap.timeline({
+          defaults: { ease: 'power2.out' },
+          scrollTrigger: {
+            trigger: sec,
+            start: 'top top',
+            end: scrollDistance,
+            pin: true,
+            scrub: 0.9,
+            anticipatePin: 1,
+            refreshPriority: 3,
+            invalidateOnRefresh: true,
+            onUpdate: (self) => {
+              const p = self.progress;
+              if (trackFill) {
+                trackFill.style.transform = `scaleX(${Math.max(0.06, p).toFixed(3)})`;
+              }
+              if (stepLabel) {
+                const idx = p < 0.2 ? '01' : p < 0.4 ? '02' : p < 0.6 ? '03' : p < 0.8 ? '04' : '05';
+                stepLabel.textContent = `${idx} / 05`;
+              }
+              sec.classList.toggle('is-finale', p >= 0.81);
+            },
+          },
+        });
+
+        // --------------------------------------------------------
+        // CENA 01 (0.00 -> 2.00): O Esforço + Cards do feed entram
+        // --------------------------------------------------------
+        tl.fromTo(q('.c1-likes'),     { x: -70, y: -40, scale: 0.86, opacity: 0 }, { x: 0, y: 0, scale: 1, opacity: 1, duration: 0.6 }, 0.05)
+          .fromTo(q('.c1-followers'), { x: 70,  y: -40, scale: 0.86, opacity: 0 }, { x: 0, y: 0, scale: 1, opacity: 1, duration: 0.6 }, 0.14)
+          .fromTo(q('.c1-trend'),     { x: -80, y: 10,  scale: 0.86, opacity: 0 }, { x: 0, y: 0, scale: 1, opacity: 1, duration: 0.55 }, 0.26)
+          .fromTo(q('.c1-post'),      { x: 80,  y: 25,  scale: 0.86, opacity: 0 }, { x: 0, y: 0, scale: 1, opacity: 1, duration: 0.6 }, 0.34)
+          .fromTo(q('.c1-hashtags'),  { x: -60, y: 60,  scale: 0.88, opacity: 0 }, { x: 0, y: 0, scale: 1, opacity: 1, duration: 0.55 }, 0.44)
+          .fromTo(q('.c1-notif'),     { x: 60,  y: 60,  scale: 0.88, opacity: 0 }, { x: 0, y: 0, scale: 1, opacity: 1, duration: 0.55 }, 0.52);
+
+        // Texto Cena 01 sai suavemente
+        tl.to(q('.prob-scene--1'), { y: -26, opacity: 0, duration: 0.45, ease: 'power2.in' }, 1.75);
+
+        // --------------------------------------------------------
+        // CENA 02 (2.00 -> 4.00): A Frustração + Balões de DM
+        // --------------------------------------------------------
+        // Cards da Cena 01 se afastam progressivamente em momentos distintos
+        tl.to(q('.c1-likes'),     { x: -130, y: -90,  rotate: -12, opacity: 0, duration: 0.85, ease: 'power1.inOut' }, 1.90)
+          .to(q('.c1-trend'),     { x: -150, y: -15,  rotate: -14, opacity: 0, duration: 0.8,  ease: 'power1.inOut' }, 2.05)
+          .to(q('.c1-followers'), { x: 130,  y: -90,  rotate: 12,  opacity: 0, duration: 0.85, ease: 'power1.inOut' }, 2.20)
+          .to(q('.c1-hashtags'),  { x: -130, y: 95,   rotate: -9,  opacity: 0, duration: 0.85, ease: 'power1.inOut' }, 2.35)
+          .to(q('.c1-post'),      { x: 140,  y: 55,   rotate: 11,  opacity: 0, duration: 0.85, ease: 'power1.inOut' }, 2.50)
+          .to(q('.c1-notif'),     { x: 120,  y: 95,   rotate: 9,   opacity: 0, duration: 0.85, ease: 'power1.inOut' }, 2.65);
+
+        // Título Cena 02 entra
+        tl.fromTo(q('.prob-scene--2'), { y: 26, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55 }, 2.15);
+
+        // Balões de cobranças entram pelas laterais
+        tl.fromTo(q('.c2-msg1'), { x: -90, y: -12, rotate: -7, scale: 0.88, opacity: 0 }, { x: 0, y: 0, rotate: -3, scale: 1, opacity: 1, duration: 0.55 }, 2.38)
+          .fromTo(q('.c2-msg2'), { x: 90,  y: -16, rotate: 7,  scale: 0.88, opacity: 0 }, { x: 0, y: 0, rotate: 3,  scale: 1, opacity: 1, duration: 0.55 }, 2.58)
+          .fromTo(q('.c2-msg3'), { x: -95, y: 18,  rotate: 6,  scale: 0.88, opacity: 0 }, { x: 0, y: 0, rotate: 2.5, scale: 1, opacity: 1, duration: 0.55 }, 2.78)
+          .fromTo(q('.c2-msg4'), { x: 95,  y: 22,  rotate: -6, scale: 0.88, opacity: 0 }, { x: 0, y: 0, rotate: -2, scale: 1, opacity: 1, duration: 0.55 }, 2.98);
+
+        // Texto Cena 02 sai
+        tl.to(q('.prob-scene--2'), { y: -26, opacity: 0, duration: 0.45, ease: 'power2.in' }, 3.82);
+
+        // --------------------------------------------------------
+        // CENA 03 (4.00 -> 6.00): Os Sintomas + 4 Cards de Queda & Vendas
+        // --------------------------------------------------------
+        // Balões de mensagem se afastam para as extremidades
+        tl.to(q('.c2-msg1'), { x: -140, y: -85, rotate: -11, opacity: 0, duration: 0.75 }, 3.92)
+          .to(q('.c2-msg2'), { x: 140,  y: -85, rotate: 11,  opacity: 0, duration: 0.75 }, 4.02)
+          .to(q('.c2-msg3'), { x: -140, y: 85,  rotate: 9,   opacity: 0, duration: 0.75 }, 4.12)
+          .to(q('.c2-msg4'), { x: 140,  y: 85,  rotate: -9,  opacity: 0, duration: 0.75 }, 4.22);
+
+        // Título Cena 03 entra
+        tl.fromTo(q('.prob-scene--3'), { y: 26, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55 }, 4.18);
+
+        // Os 4 cards de sintomas e vendas em queda entram sequencialmente
+        tl.fromTo(q('.c3-discount'),  { x: -100, y: -30, rotate: -10, scale: 0.85, opacity: 0 }, { x: 0, y: 0, rotate: -3.5, scale: 1, opacity: 1, duration: 0.5 }, 4.38)
+          .fromTo(q('.c3-content'),   { x: 100,  y: -25, rotate: 9,   scale: 0.85, opacity: 0 }, { x: 0, y: 0, rotate: 3,    scale: 1, opacity: 1, duration: 0.5 }, 4.62)
+          .fromTo(q('.c3-sales'),     { x: -95,  y: 75,  rotate: 8,   scale: 0.85, opacity: 0 }, { x: 0, y: 0, rotate: 2.5,  scale: 1, opacity: 1, duration: 0.5 }, 4.86)
+          .fromTo(q('.c3-marketing'), { x: 95,   y: 80,  rotate: -7,  scale: 0.85, opacity: 0 }, { x: 0, y: 0, rotate: -2,   scale: 1, opacity: 1, duration: 0.5 }, 5.08);
+
+        // Afastamento gradual em direções opostas na segunda metade da Cena 03
+        tl.to(q('.c3-discount'),  { x: -165, y: -110, rotate: -15, scale: 0.9, opacity: 0, duration: 0.82, ease: 'power1.in' }, 5.56)
+          .to(q('.c3-content'),   { x: 165,  y: -105, rotate: 14,  scale: 0.9, opacity: 0, duration: 0.82, ease: 'power1.in' }, 5.66)
+          .to(q('.c3-sales'),     { x: -150, y: 115,  rotate: 11,  scale: 0.9, opacity: 0, duration: 0.82, ease: 'power1.in' }, 5.74)
+          .to(q('.c3-marketing'), { x: 150,  y: 120,  rotate: -12, scale: 0.9, opacity: 0, duration: 0.82, ease: 'power1.in' }, 5.82);
+
+        tl.to(q('.prob-scene--3'), { y: -26, opacity: 0, duration: 0.45, ease: 'power2.in' }, 5.88);
+
+        // --------------------------------------------------------
+        // CENA 04 (6.00 -> 8.00): A Virada (Atmosfera minimalista)
+        // --------------------------------------------------------
+        tl.fromTo(q('.prob-scene--4'), { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55 }, 6.18)
+          // Pausa narrativa com a pergunta antes do texto complementar
+          .fromTo(q('.prob-s4-a'), { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55 }, 6.90);
+
+        if (underlinePath && typeof underlinePath.getTotalLength === 'function') {
+          tl.to(underlinePath, { strokeDashoffset: 0, duration: 0.45, ease: 'power2.out' }, 7.15);
+        }
+
+        tl.to(q('.prob-scene--4'), { y: -24, opacity: 0, duration: 0.45, ease: 'power2.in' }, 7.98);
+
+        // --------------------------------------------------------
+        // CENA 05 (8.00 -> 10.00): A Revelação Final (#FB0C72)
+        // --------------------------------------------------------
+        tl.to(sec, { backgroundColor: '#FB0C72', duration: 0.75, ease: 'power1.inOut' }, 7.90)
+          .to(q('.sq-field'), { opacity: 0.1, duration: 0.75, ease: 'power1.inOut' }, 7.90)
+          .set(q('.prob-scene--5'), { opacity: 1, y: 0 }, 8.20)
+          .fromTo(q('.prob-s5-main'), { y: 26, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, 8.32)
+          .fromTo(q('.prob-s5-q'),    { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55 }, 8.98)
+          // Pausa final confortável para leitura antes de liberar o scroll
+          .to({}, { duration: 0.48 }, 9.52);
+
+        return () => {
+          sec.classList.remove('is-finale');
+        };
+      });
+    }
+
+    // Reveals com GSAP ScrollTrigger para Seção 04 (.stats — #stats-2)
+    function setupScroll() {
+      document.querySelectorAll('.split').forEach(splitEl);
+      if (reduce) return;
+
+      document.querySelectorAll('.stats').forEach((sec) => {
+        const pill = sec.querySelector('.pill');
+        if (pill) {
+          gsap.from(pill, {
+            y: 12, opacity: 0, duration: 0.45, ease: 'power3.out',
+            scrollTrigger: { trigger: pill, start: 'top 90%', once: true },
+          });
+        }
+
+        const headingWords = sec.querySelectorAll('.h2 .word > span');
+        if (headingWords.length) {
+          gsap.from(headingWords, {
+            y: 18, opacity: 0, duration: 0.5, ease: 'power3.out', stagger: 0.05,
+            scrollTrigger: { trigger: sec.querySelector('.h2'), start: 'top 86%', once: true },
+          });
+        }
+
+        const cards = sec.querySelectorAll('.card');
+        if (cards.length) {
+          gsap.from(cards, {
+            y: 18, opacity: 0, duration: 0.5, ease: 'power3.out', stagger: 0.07,
+            scrollTrigger: { trigger: sec.querySelector('.cards'), start: 'top 85%', once: true },
+          });
+        }
+      });
+    }
+
+
+    // Seção 05 (#reelmark) é controlada exclusivamente pelo React BackstageExhibition + ScrollTrigger
+
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(() => {
+        initProblemSection(); setupScroll();
+        if (typeof ScrollTrigger.sort === 'function') ScrollTrigger.sort();
+        ScrollTrigger.refresh();
+      });
+    } else {
+      addEventListener('load', () => {
+        initProblemSection(); setupScroll();
+        if (typeof ScrollTrigger.sort === 'function') ScrollTrigger.sort();
+        ScrollTrigger.refresh();
+      });
+    }
+    addEventListener('load', () => {
+      if (typeof ScrollTrigger.sort === 'function') ScrollTrigger.sort();
+      ScrollTrigger.refresh();
+    });
+
+    if (!reduce && typeof window.Lenis === 'function') {
+      const lenis = new Lenis({ duration: 1.25, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothWheel: true });
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add(t => lenis.raf(t * 1000));
+      gsap.ticker.lagSmoothing(0);
+
+      document.addEventListener('click', (e) => {
+        const anchor = e.target && e.target.closest ? e.target.closest('a[href^="#"]') : null;
+        if (!anchor) return;
+        const targetId = anchor.getAttribute('href');
+        if (!targetId || targetId === '#') return;
+        const target = document.querySelector(targetId);
+        if (target) {
+          e.preventDefault();
+          lenis.scrollTo(target, { duration: 1.25, offset: -88 });
+        }
+      });
+    }
+  </script>
+</body>
+</html>

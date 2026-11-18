@@ -1,0 +1,459 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+/* ==========================================================================
+   K-POP GIRLY EDITORIAL — CENTRAL DESIGN SYSTEM TOKENS
+   ========================================================================== */
+:root {
+  /* Color Tokens */
+  --color-background: #FFF9F4;
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #F2BED6;
+  --color-primary: #FB0C72;
+  --color-primary-hover: #D90761;
+  --color-accent: #A5DCD1;
+  --color-text-primary: #000000;
+  --color-text-secondary: rgba(0, 0, 0, 0.70);
+  --color-border: rgba(0, 0, 0, 0.16);
+  --color-border-strong: #000000;
+
+  /* Typography Tokens — Reference-Based System */
+  --font-display: "Anton", "Impact", sans-serif;
+  --font-handwritten: "Caveat", cursive;
+  --font-body: "DM Sans", Arial, sans-serif;
+  --font-ui: "DM Sans", Arial, sans-serif;
+
+  /* Spacing Tokens */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* Radius Tokens */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 999px;
+
+  /* Shadow Tokens */
+  --shadow-editorial: 0 12px 30px rgba(0, 0, 0, 0.10);
+  --shadow-sticker: 4px 4px 0 rgba(0, 0, 0, 0.85);
+
+  /* Motion Tokens */
+  --motion-fast: 160ms;
+  --motion-standard: 260ms;
+  --motion-cinematic: 520ms;
+  --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@theme {
+  --font-sans: "DM Sans", Arial, sans-serif;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-body);
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+.liquid-glass {
+  background: rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 249, 244, 0.22);
+  box-shadow: var(--shadow-editorial);
+  position: relative;
+  overflow: hidden;
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-handwritten {
+    font-family: var(--font-handwritten);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .font-ui {
+    font-family: var(--font-ui);
+  }
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-up {
+    opacity: 0;
+    animation: fade-up var(--motion-cinematic) var(--ease-editorial) forwards;
+  }
+
+  .animate-fade-up-delay-1 {
+    opacity: 0;
+    animation: fade-up var(--motion-cinematic) var(--ease-editorial) 120ms forwards;
+  }
+
+  .animate-fade-up-delay-2 {
+    opacity: 0;
+    animation: fade-up var(--motion-cinematic) var(--ease-editorial) 240ms forwards;
+  }
+
+  .animate-fade-up-delay-3 {
+    opacity: 0;
+    animation: fade-up var(--motion-cinematic) var(--ease-editorial) 360ms forwards;
+  }
+
+  @keyframes marquee-scroll {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee-scroll 28s linear infinite;
+    will-change: transform;
+  }
+
+  .animate-marquee-paused {
+    animation-play-state: paused;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-up,
+    .animate-fade-up-delay-1,
+    .animate-fade-up-delay-2,
+    .animate-fade-up-delay-3 {
+      opacity: 1;
+      transform: none;
+      animation: none;
+    }
+
+    .animate-marquee {
+      animation: none;
+    }
+  }
+}
+
+/* ==========================================================================
+   SEÇÃO 06 — PROCESSO: MICROANIMAÇÕES EDITORIAIS (ISOLADO EM .proc-illo)
+   ========================================================================== */
+.proc-illo {
+  width: 100%;
+  height: clamp(58px, 4.8vw, 74px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+
+.proc-illo-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.proc-illo-inner svg {
+  width: 100%;
+  max-width: 176px;
+  height: 100%;
+  display: block;
+}
+
+.proc-illo-inner g,
+.proc-illo-inner circle,
+.proc-illo-inner rect,
+.proc-illo-inner path {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* Estado inicial antes de entrar na viewport */
+.proc-illo--waiting svg > * {
+  opacity: 0;
+}
+
+/* Traços com desenho progressivo (pathLength=1) */
+.proc-c1-line1,
+.proc-c1-line2,
+.proc-c2-highlight,
+.proc-c3-guides,
+.proc-c3-corner,
+.proc-c4-lines,
+.proc-c4-check,
+.proc-c5-path1,
+.proc-c5-path2,
+.proc-c5-arrow {
+  stroke-dasharray: 1.05;
+  stroke-dashoffset: 1.05;
+}
+
+/* ---------------- CARD 01: CONVERSA ---------------- */
+@keyframes proc-c1-bubble-left {
+  0% { opacity: 0; transform: translate3d(-12px, 4px, 0) scale(0.92); }
+  52% { opacity: 1; transform: translate3d(-1px, 0, 0) scale(1); }
+  100% { opacity: 1; transform: translate3d(3px, 0, 0) scale(1); }
+}
+
+@keyframes proc-c1-bubble-right {
+  0% { opacity: 0; transform: translate3d(12px, -3px, 0) scale(0.92); }
+  52% { opacity: 1; transform: translate3d(1px, 0, 0) scale(1); }
+  100% { opacity: 1; transform: translate3d(-3px, 0, 0) scale(1); }
+}
+
+@keyframes proc-stroke-draw {
+  0% { stroke-dashoffset: 1.05; opacity: 0.4; }
+  15% { opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 1; }
+}
+
+@keyframes proc-pop-settle {
+  0% { opacity: 0; transform: scale(0.35); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.proc-illo--active .proc-c1-b1 {
+  animation: proc-c1-bubble-left 760ms var(--ease-editorial) calc(var(--proc-delay, 0ms)) both;
+}
+.proc-illo--active .proc-c1-b2 {
+  animation: proc-c1-bubble-right 740ms var(--ease-editorial) calc(var(--proc-delay, 0ms) + 140ms) both;
+}
+.proc-illo--active .proc-c1-line1 {
+  animation: proc-stroke-draw 340ms var(--ease-editorial) calc(var(--proc-delay, 0ms) + 260ms) both;
+}
+.proc-illo--active .proc-c1-line2 {
+  animation: proc-stroke-draw 300ms var(--ease-editorial) calc(var(--proc-delay, 0ms) + 380ms) both;
+}
+.proc-illo--active .proc-c1-dot1 {
+  animation: proc-pop-settle 220ms var(--ease-editorial) calc(var(--proc-delay, 0ms) + 420ms) both;
+}
+.proc-illo--active .proc-c1-dot2 {
+  animation: proc-pop-settle 220ms var(--ease-editorial) calc(var(--proc-delay, 0ms) + 520ms) both;
+}
+.proc-illo--active .proc-c1-dot3 {
+  animation: proc-pop-settle 220ms var(--ease-editorial) calc(var(--proc-delay, 0ms) + 620ms) both;
+}
+.proc-illo--active .proc-c1-spark {
+  animation: proc-pop-settle 320ms var(--ease-editorial) calc(var(--proc-delay, 0ms) + 580ms) both;
+}
+
+/* ---------------- CARD 02: INVESTIGAÇÃO ---------------- */
+@keyframes proc-soft-lift {
+  0% { opacity: 0; transform: translate3d(0, 5px, 0); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes proc-c2-lens-scan {
+  0% { opacity: 0; transform: translate3d(-34px, -9px, 0) scale(0.9); }
+  20% { opacity: 1; transform: translate3d(-32px, -8px, 0) scale(1); }
+  50% { opacity: 1; transform: translate3d(-13px, 6px, 0) scale(1); }
+  78% { opacity: 1; transform: translate3d(4px, -5px, 0) scale(1); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+}
+
+.proc-illo--active .proc-c2-sheet {
+  animation: proc-soft-lift 420ms var(--ease-editorial) calc(var(--proc-delay, 0ms)) both;
+}
+.proc-illo--active .proc-c2-lens {
+  animation: proc-c2-lens-scan 840ms var(--ease-editorial) calc(var(--proc-delay, 0ms) + 120ms) both;
+}
+.proc-illo--active .proc-c2-highlight {
+  animation: proc-stroke-draw 380ms var(--ease-editorial) calc(var(--proc-delay, 0ms) + 660ms) both;
+}
+
+/* ---------------- CARD 03: DIREÇÃO ---------------- */
+@keyframes proc-c3-block-1 {
+  0% { opacity: 0; transform: translate3d(-12px, -6px, 0) rotate(-6deg); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0) rotate(0deg); }
+}
+@keyframes proc-c3-block-2 {
+  0% { opacity: 0; transform: translate3d(12px, -7px, 0) rotate(7deg); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0) rotate(0deg); }
+}
+@keyframes proc-c3-block-3 {
+  0% { opacity: 0; transform: translate3d(-11px, 7px, 0) rotate(5deg); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0) rotate(0deg); }
+}
+@keyframes proc-c3-block-4 {
+  0% { opacity: 0; transform: translate3d(12px, 6px, 0) rotate(-6deg); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0) rotate(0deg); }
+}
+
+.proc-illo--active .proc-c3-b1 {
+  animation: proc-c3-block-1 620ms var(--ease-editorial) calc(var(--proc-delay, 0ms)) both;
+}
+.proc-illo--active .proc-c3-b2 {
+  animation: proc-c3-block-2 620ms var(--ease-editorial) calc(var(--proc-delay, 0ms) + 80ms) both;
+}
+.proc-illo--active .proc-c3-b3 {
+  animation: proc-c3-block-3 620ms var(--ease-editorial) calc(var(--proc-delay, 0ms) + 150ms) both;
+}
+.proc-illo--active .proc-c3-b4 {
+  animation: proc-c3-block-4 620ms var(--ease-editorial) calc(var(--proc-delay, 0ms) + 220ms) both;
+}
+.proc-illo--active .proc-c3-guides {
+  animation: proc-stroke-draw 340ms var(--ease-editorial) calc(var(--proc-delay, 0ms) + 560ms) both;
+}
+.proc-illo--active .proc-c3-corner {
+  animation: proc-stroke-draw 320ms var(--ease-editorial) calc(var(--proc-delay, 0ms) + 630ms) both;
+}
+
+/* ---------------- CARD 04: EXECUÇÃO ---------------- */
+@keyframes proc-c4-slide-down {
+  0% { opacity: 0; transform: translate3d(0, -6px, 0); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes proc-c4-slide-right {
+  0% { opacity: 0; transform: translate3d(-7px, 0, 0); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+.proc-illo--active .proc-c4-sheet {
+  animation: proc-soft-lift 400ms var(--ease-editorial) calc(var(--proc-delay, 0ms)) both;
+}
+.proc-illo--active .proc-c4-header {
+  animation: proc-c4-slide-down 380ms var(--ease-editorial) calc(var(--proc-delay, 0ms) + 140ms) both;
+}
+.proc-illo--active .proc-c4-block {
+  animation: proc-c4-slide-right 380ms var(--ease-editorial) calc(var(--proc-delay, 0ms) + 240ms) both;
+}
+.proc-illo--active .proc-c4-lines {
+  animation: proc-stroke-draw 420ms var(--ease-editorial) calc(var(--proc-delay, 0ms) + 320ms) both;
+}
+.proc-illo--active .proc-c4-tab {
+  animation: proc-pop-settle 260ms var(--ease-editorial) calc(var(--proc-delay, 0ms) + 460ms) both;
+}
+.proc-illo--active .proc-c4-checkwrap {
+  animation: proc-pop-settle 280ms var(--ease-editorial) calc(var(--proc-delay, 0ms) + 560ms) both;
+}
+.proc-illo--active .proc-c4-check {
+  animation: proc-stroke-draw 360ms var(--ease-editorial) calc(var(--proc-delay, 0ms) + 640ms) both;
+}
+
+/* ---------------- CARD 05: ACOMPANHAMENTO ---------------- */
+.proc-illo--active .proc-c5-frame {
+  animation: proc-soft-lift 360ms var(--ease-editorial) calc(var(--proc-delay, 0ms)) both;
+}
+.proc-illo--active .proc-c5-path1 {
+  animation: proc-stroke-draw 480ms var(--ease-editorial) calc(var(--proc-delay, 0ms) + 120ms) both;
+}
+.proc-illo--active .proc-c5-node1 {
+  animation: proc-pop-settle 220ms var(--ease-editorial) calc(var(--proc-delay, 0ms) + 280ms) both;
+}
+.proc-illo--active .proc-c5-node2 {
+  animation: proc-pop-settle 220ms var(--ease-editorial) calc(var(--proc-delay, 0ms) + 400ms) both;
+}
+.proc-illo--active .proc-c5-node3 {
+  animation: proc-pop-settle 240ms var(--ease-editorial) calc(var(--proc-delay, 0ms) + 520ms) both;
+}
+.proc-illo--active .proc-c5-path2 {
+  animation: proc-stroke-draw 380ms var(--ease-editorial) calc(var(--proc-delay, 0ms) + 560ms) both;
+}
+.proc-illo--active .proc-c5-arrow {
+  animation: proc-stroke-draw 240ms var(--ease-editorial) calc(var(--proc-delay, 0ms) + 760ms) both;
+}
+
+/* Acessibilidade & estado reduzido: mostra estado final estável sem movimento */
+.proc-illo--reduced svg *,
+.proc-illo--reduced svg > * {
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+  stroke-dashoffset: 0 !important;
+}
+
+.proc-illo--reduced .proc-c1-b1 {
+  transform: translate3d(3px, 0, 0) !important;
+}
+.proc-illo--reduced .proc-c1-b2 {
+  transform: translate3d(-3px, 0, 0) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .proc-illo svg *,
+  .proc-illo svg > * {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+  .proc-illo .proc-c1-b1 {
+    transform: translate3d(3px, 0, 0) !important;
+  }
+  .proc-illo .proc-c1-b2 {
+    transform: translate3d(-3px, 0, 0) !important;
+  }
+}
+
+@media (max-width: 1080px) {
+  .proc-illo {
+    height: 64px;
+  }
+  .proc-illo-inner svg {
+    max-width: 184px;
+  }
+}
+
+@media (max-width: 600px) {
+  .proc-illo {
+    height: 60px;
+  }
+  .proc-illo-inner svg {
+    max-width: 176px;
+  }
+}
+
+/* Lightweight repeatable matte cotton tooth (replaces live SVG feTurbulence + feDiffuseLighting filters) */
+.cotton-paper-tooth {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.42'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 160px 160px;
+}
+
+/* Static matte paper finish & calibrated shadow for Section 05 photocards */
+.photocard-matte {
+  background-color: #FCF8F2;
+  background-image: linear-gradient(155deg, rgba(255, 255, 255, 0.65) 0%, rgba(246, 238, 228, 0.35) 100%);
+  border: 1px solid rgba(28, 20, 24, 0.11);
+  border-radius: 2px;
+  box-shadow:
+    0 12px 26px -4px rgba(24, 14, 18, 0.13),
+    0 3px 6px rgba(24, 14, 18, 0.10),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.55);
+}
+
+
